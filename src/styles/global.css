@@ -1,18 +1,24 @@
 :root {
-  background-color: #f1f5f9;
+  --bg: #f1f5f9;
+  --accent-1: navy;
+  --accent-2: #ff9776;
+  --bg-2: #ccc;
+  background-color: var(--bg);
   font-family: 'Ubuntu', sans-serif;
 }
 
 body {
   margin: 0 auto;
-  width: 100%;
-  max-width: 80ch;
-  padding: 0 1rem;
   line-height: 1.5;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+}
+
+main, #footer-container, nav {
+  width: 100%; max-width: 80ch;
+  margin: auto;
 }
 
 main {
@@ -29,12 +35,27 @@ h1 {
 }
 
 header {
-  background-color: #ccc;
+  background-color: var(--bg-2);
 }
+
+footer {
+  padding: 1rem;
+  background-color: #ccc;
+  text-align: center;
+}
+footer p {
+  margin-top: 0;
+}
+footer .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
 
 /*Nav styles*/
 .hamburger {
-  padding-right: 20px;
   cursor: pointer;
 }
 
@@ -42,8 +63,12 @@ header {
   display: block;
   width: 40px;
   height: 5px;
+  background-color: var(--accent-2);
   margin-bottom: 10px;
-  background-color: #ff9776;
+  margin-left: 10px;
+}
+.hamburger .line:first-of-type {
+  margin-top: 10px;
 }
 
 .nav-links {
@@ -62,7 +87,7 @@ header {
 }
 
 .nav-links a:hover, a:focus {
-  background-color: #ff9776;
+  background-color: var(--accent-2);
 }
 
 .expanded {

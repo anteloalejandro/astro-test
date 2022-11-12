@@ -3,29 +3,14 @@ import Social from "./Social.astro";
 ---
 
 <footer>
-  <p>
+  <div id="footer-container">
+    <p>
     Learn more about my projects on
-  </p>
-  <div>
-    <Social platform="gitlab.com" username="anteloalejandro"/>
-    <Social platform="github.com" username="anteloalejandro"/>
-    <Social platform="youtube.com/channel" username="UC0c9JpJZOHyBMGNx3mIcnOQ"/>
+    </p>
+    <div class="buttons">
+      <Social platform="gitlab.com" username="anteloalejandro"/>
+      <Social platform="github.com" username="anteloalejandro"/>
+      <Social platform="youtube.com/channel" username="UC0c9JpJZOHyBMGNx3mIcnOQ"/>
+    </div>
   </div>
 </footer>
-
-<style>
-  footer {
-    padding: 1rem;
-    background-color: #ccc;
-    text-align: center;
-  }
-  footer p {
-    margin-top: 0;
-  }
-  footer div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-  }
-</style>
