@@ -7,8 +7,15 @@ const title = "My Astro Site"
 </MainLayout>
 
 <style is:global>
-  h1 {
-    padding-block: 30vh;
+  main {
     text-align: center;
+    flex-grow: unset;
+  }
+  h1 {
+    font-size: 6rem;
+    background-image: linear-gradient(to bottom right, navy, #ccc);
+    background-clip: text;
+    color: transparent;
   }
 </style>
+

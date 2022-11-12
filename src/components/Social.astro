@@ -1,7 +1,10 @@
 ---
 const {platform, username} = Astro.props
+const str_platform = String(platform)
+const slashIndex = str_platform.indexOf('/')
+const domain = str_platform.slice(0, slashIndex === -1 ? str_platform.length : slashIndex)
 ---
-<a href={`https://${platform}/${username}`}>{platform}</a>
+<a href={`https://${platform}/${username}`}>{domain}</a>
 
 <style>
   a {
