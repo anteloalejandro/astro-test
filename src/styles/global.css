@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Ubuntu';
+  src: url(../../public/assets/fonts/Ubuntu-Regular.ttf) font-weight-normal,
+    url(../../public/assets/fonts/Ubuntu-Bold.ttf) font-weight-bold,
+    url(../../public/assets/fonts/Ubuntu-Italic.ttf) font-italic font-weight-normal,
+    url(../../public/assets/fonts/Ubuntu-BoldItalic.ttf) font-italic font-weight-bold;
+}
+
 :root {
   --bg: #f1f5f9;
   --accent-1: navy;
@@ -23,6 +31,7 @@ main, #footer-container, nav {
 
 main {
   flex-grow: 999;
+  padding-inline: 0.5rem;
 }
 
 * {
@@ -37,6 +46,7 @@ h1 {
 header {
   background-color: var(--bg-2);
 }
+
 
 footer {
   padding: 1rem;
@@ -84,10 +94,15 @@ footer .buttons {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
+  color: var(--accent-1);
 }
 
-.nav-links a:hover, a:focus {
+.nav-links :is(a:hover, a:focus) {
   background-color: var(--accent-2);
+}
+
+.nav-links a:active {
+  color: rgba(0, 0, 0, 0.6)
 }
 
 .expanded {
