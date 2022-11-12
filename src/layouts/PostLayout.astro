@@ -1,0 +1,9 @@
+---
+const {frontmatter} = Astro.props
+import MainLayout from "./MainLayout.astro";
+---
+<MainLayout title={frontmatter.title}>
+  <p><small>Written by {frontmatter.author}</small> - <small>Published on: {frontmatter.pubDate.slice(0,10)}</small></p>
+  <p><em>{frontmatter.description}</em></p>
+  <slot/>
+</MainLayout>

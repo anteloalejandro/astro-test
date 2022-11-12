@@ -1,0 +1,60 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+const title = 'About Me'
+
+const identity = {
+	firstName: "Alejandro",
+	country: "Spain",
+}
+
+const skills = ["HTML", "CSS", "JavaScript", "Astro"]
+
+const finished = false
+
+const skillColor = "navy"
+---
+
+<MainLayout title={title}>
+	<h2>And my new Astro Site!</h2>
+
+	<ul>
+		<li>
+			My name is {identity.firstName}
+		</li>
+		<li>
+			I live in {identity.country}
+		</li>
+		<li>
+			My skills are: 
+			<ul>
+				{skills.map((skill) => <li class="skill">{skill}</li>)}
+			</ul>
+		</li>
+	</ul>
+
+	<p>
+		I am working through Astro's intrudoctory tutorial. This the second page on my website, and it's the first one I've built myself.
+	</p>
+
+	<p>
+		This site will update as I complete more of the tutorial, so keep checking it back and see how my journey is going!
+	</p>
+
+	<p>
+		{finished ? 'I finished the tutorial!' : 'I haven\'t finished the tutorial yet'}
+	</p>
+
+</MainLayout>
+
+<style define:vars={{skillColor}} is:global>
+	h1 {
+		color: purple;
+		font-size: 4rem;
+	}
+
+	.skill {
+		color: var(--skillColor, green);
+		font-weight: bold;
+	}
+</style>
