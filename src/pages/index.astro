@@ -1,9 +1,14 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Greeting from "../components/Greeting.jsx"
 const title = "My Astro Site"
 ---
 
 <MainLayout title={title}>
+  <!--Non-Hydrated-->
+  <!-- <Greeting messages={['Hi', 'Hello', 'Howdy', 'Arrr, matie', 'Hello there']}/> -->
+  <!--Hydrated-->
+  <Greeting client:load messages={['Hi', 'Hello', 'Howdy', 'Arrr, matie', 'Hello there']}/>
 </MainLayout>
 
 <style is:global>
