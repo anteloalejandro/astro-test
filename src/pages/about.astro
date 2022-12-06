@@ -12,7 +12,7 @@ const skills = ["HTML", "CSS", "JavaScript", "Astro"]
 
 const finished = false
 
-const skillColor = "navy"
+const skillColor = "green"
 ---
 
 <MainLayout title={title}>
@@ -47,9 +47,9 @@ const skillColor = "navy"
 
 </MainLayout>
 
-<style define:vars={{skillColor}} is:global>
-	h1 {
-		color: purple;
+<style define:vars={{skillColor}}>
+	:global(h1:first-of-type) {
+		color: var(--accent-1);
 		font-size: 4rem;
 	}
 

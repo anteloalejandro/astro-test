@@ -8,15 +8,18 @@ const domain = str_platform.slice(0, slashIndex === -1 ? str_platform.length : s
 
 <style>
   a {
+    color: white;
     padding: 0.5rem 0.8rem;
     margin-inline: 0.2rem;
-    color: white;
     background-color: #4c1d95;
     text-decoration: none;
     border-radius: 25px;
     display: inline-block;
     height: fit-content;
     transition: transform 50ms ease-in;
+  }
+  a:visited {
+    color: white
   }
   a:hover {
     transform: scale(1.05);

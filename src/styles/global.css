@@ -25,11 +25,25 @@
 
 :root {
   --bg: #f1f5f9;
+  --fg: black;
   --accent-1: navy;
   --accent-2: #ff9776;
+  --accent-link: darkblue;
+  --accent-link-visited: darkblue;
   --bg-2: #ccc;
   background-color: var(--bg);
+  color: var(--fg);
   font-family: 'Ubuntu', sans-serif;
+}
+
+:root.dark {
+  --bg: #282828;
+  --fg: whitesmoke;
+  --accent-1: lightblue;
+  --accent-2: #ff9776;
+  --accent-link: dodgerblue;
+  --accent-link-visited: pink;
+  --bg-2: #222;
 }
 
 body {
@@ -41,7 +55,18 @@ body {
   min-height: 100vh;
 }
 
-main, #footer-container, nav {
+a {
+  color: var(--accent-link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:visited {
+  color: var(--accent-link-visited)
+}
+
+main, #footer-container, nav .nav-links{
   width: 100%; max-width: 80ch;
   margin: auto;
 }
@@ -67,7 +92,7 @@ header {
 
 footer {
   padding: 1rem;
-  background-color: #ccc;
+  background-color: var(--bg-2);
   text-align: center;
 }
 footer p {
@@ -82,8 +107,16 @@ footer .buttons {
 
 
 /*Nav styles*/
+
+nav #first-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .hamburger {
   cursor: pointer;
+  flex-grow: 1
 }
 
 .hamburger .line {
@@ -126,8 +159,23 @@ footer .buttons {
   display: unset;
 }
 
-@media screen and (min-width: 636px) {
+@media screen and (min-width: 770px) {
+
+  nav {
+    display: grid;
+    grid-template-columns: 1fr min(100%, 80ch) 1fr;
+    align-items: center;
+  }
+
+  nav #first-section {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    justify-self: start;
+  }
+  
   .nav-links {
+    grid-column-start: 2;
+    grid-row-start: 1;
     display: flex;
     position: static;
     width: auto;
@@ -138,6 +186,10 @@ footer .buttons {
     display: inline-block;
     flex: 1;
     padding: 15px 20px;
+  }
+
+  nav #first-section {
+    display: inline;
   }
 
   .hamburger {
