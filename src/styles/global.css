@@ -144,3 +144,34 @@ footer .buttons {
     display: none;
   }
 }
+
+
+/*TAGS*/
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+  }
+
+  .tag {
+    margin: 0.25em;
+    border: solid 1px #bbb;
+    border-radius: 0.5em;
+    font-size: 1.15em;
+    background-color: white;
+    color: #00539F;
+  }
+  .tag:hover {
+    background-color: #00539F;
+    color: white;
+  }
+  .tag a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    width: 100%; height: 100%;
+    padding: 0.5em 1em;
+  }
+
